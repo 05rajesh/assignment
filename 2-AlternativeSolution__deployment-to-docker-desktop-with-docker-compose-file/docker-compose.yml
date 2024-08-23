@@ -6,7 +6,7 @@ services:
       context: ./application1
     image: rajeshth05/application1:latest
     ports:
-      - "5000:5000"
+      - "4000:4000"
     networks:
       - app-network
 
@@ -17,7 +17,7 @@ services:
       - application1
     image: rajeshth05/application2:latest
     ports:
-      - "5001:5001"
+      - "4001:4001"
     networks:
       - app-network
       

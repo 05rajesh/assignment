@@ -11,10 +11,10 @@ def reverse_string(string):
 
 @app.route('/application2/reverse-msg-response', methods=['GET'])
 def reverse_message():
-    response = requests.get('http://application1:5000/application1/msg-response')
+    response = requests.get('http://application1:4000/application1/msg-response')
     data = response.json()
     data["message"] = reverse_string(data["message"])
     return jsonify(data)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=4001)

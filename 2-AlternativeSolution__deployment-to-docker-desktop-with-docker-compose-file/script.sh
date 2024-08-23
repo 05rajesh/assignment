@@ -4,16 +4,18 @@
 echo "###################### START DEPLOYMENT ########################"
 
 #################################
-#  SCRIPT INPUT ARGS			#
+#  SCRIPT INPUT ARGS                    #
 #################################
 
 DOCKER_USERNAME=$1 # Please provide your Docker Username as an script argument
 DOCKER_PASSWORD=$2 # Please provide your Docker Password as an script argument
 
 #################################
-#  INITIALIZATION STAGE			#
+#  INITIALIZATION STAGE                 #
 #################################
 echo "INITIALIZING VARIABLES"
+APP1_PORT="4000"
+APP2_PORT="4001"
 APPLICATION1_IMAGE="application1"
 APPLICATION2_IMAGE="application2"
 APP1_IMG_NAME=$DOCKER_USERNAME/$APPLICATION1_IMAGE
@@ -27,7 +29,7 @@ sed -i "s|image: [^/]*/$APPLICATION1_IMAGE|image: $APP1_IMG_NAME|g" docker-compo
 sed -i "s|image: [^/]*/$APPLICATION2_IMAGE|image: $APP2_IMG_NAME|g" docker-compose.yml
 
 #################################
-#        BUILD STAGE			#
+#        BUILD STAGE                    #
 #################################
 echo "Building Docker images..."
 docker build --no-cache -t $APP1_IMG_NAME:latest ./application1
@@ -40,7 +42,7 @@ docker push $APP1_IMG_NAME:latest
 docker push $APP2_IMG_NAME:latest
 
 #################################
-#        DEPLOY STAGE			#
+#        DEPLOY STAGE                   #
 #################################
 #Deploy to Kubernetes
 echo "Deploying to Kubernetes..."
@@ -49,22 +51,21 @@ docker compose up --detach
 echo "Waiting for services to be ready..."
 sleep 10
 
-
 #################################
-#      HTTP RESPONSE STAGE		#
+#      HTTP RESPONSE STAGE              #
 #################################
 echo "========Application1 Response ========="
 echo "Fetching HTTP response from app1..."
-curl -s http://localhost:5000/$APPLICATION1_IMAGE/msg-response
+curl -s http://localhost:$APP1_PORT/$APPLICATION1_IMAGE/msg-response
 
 echo ""
 
 echo "========Application2 Response ========="
 echo "Fetching HTTP response from app2..."
-curl -s http://localhost:5001/$APPLICATION2_IMAGE/reverse-msg-response
+curl -s http://localhost:$APP2_PORT/$APPLICATION2_IMAGE/reverse-msg-response
 
 #################################
-#   CLEAN UP ALL UNUSED IMAGES	#
+#   CLEAN UP ALL UNUSED IMAGES  #
 #################################
 # Uncomment code if you wnat to cleanup older unused images from minikube. I used it as while testing there were many unused images got created and that not great.
 
@@ -73,3 +74,4 @@ curl -s http://localhost:5001/$APPLICATION2_IMAGE/reverse-msg-response
 
 echo "###################### END ########################"
 echo ""
+

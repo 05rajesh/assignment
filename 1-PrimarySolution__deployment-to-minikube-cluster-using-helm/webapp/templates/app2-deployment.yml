@@ -27,5 +27,5 @@ spec:
               name: app-config
               key: APP1_NODEPORT
         ports:
-        - containerPort: 5001
+        - containerPort: {{ .Values.app2.containerPort }}
 

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      containers:
+      - name: app2
+        image: {{ .Values.app2.image }}
+        env:
+        - name: MINIKUBE_IP
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: MINIKUBE_IP
+        - name: APP1_NODEPORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: APP1_NODEPORT
+        ports:
+        - containerPort: 5001
+

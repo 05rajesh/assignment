@@ -1,12 +1,12 @@
 app1:
-  image: "ttamanna/application1:latest"
+  image: "rajeshth05/application1:latest"
   targetPort: 5000
   servicePort: 5000
   containerPort: 5000
   nodePort: 30011
 
 app2:
-  image: "ttamanna/application2:latest"
+  image: "rajeshth05/application2:latest"
   targetPort: 5001
   servicePort: 5001
   containerPort: 5001

@@ -34,12 +34,12 @@ else
   kubectl create namespace $NAMESPACE
 fi
 
-## Using SED command to dynamically chaning the Image Name in docker compose file
+## Using SED command to dynamically chaning the values in helm files. So that code runs everytime with the latest image.
 sed -i "s|image: [^/]*/$APPLICATION1_IMAGE|image: \"$APP1_IMG_NAME|g" $HELM_CHART_PATH/values.yaml
 sed -i "s|image: [^/]*/$APPLICATION2_IMAGE|image: \"$APP2_IMG_NAME|g" $HELM_CHART_PATH/values.yaml
 sed -i "s|MINIKUBE_IP: .*|MINIKUBE_IP: \"$MINIKUBE_IP\"|g" $HELM_CHART_PATH/templates/app-conf.yml
 #################################
-#        BUILD STAGE			#
+#        BUILD STAGE		#
 #################################
 echo "Building Docker images..."
 docker build --no-cache -t $APP1_IMG_NAME:latest ./application1
@@ -52,7 +52,7 @@ docker push $APP1_IMG_NAME:latest
 docker push $APP2_IMG_NAME:latest
 
 #################################
-#    HELM DEPLOY STAGE			#
+#    HELM DEPLOY STAGE		#
 #################################
 # Deploy to Kubernetes using Helm
 echo "Deploying to Kubernetes..."
@@ -69,7 +69,7 @@ APP2_NODEPORT=$(kubectl get service app2-service -o jsonpath='{.spec.ports[0].no
 
 
 #################################
-#      HTTP RESPONSE STAGE		#
+#      HTTP RESPONSE STAGE	#
 #################################
 echo "========Application1 Response ========="
 echo "Fetching HTTP response from application1..."

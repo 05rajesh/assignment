@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  application1:
+    build:
+      context: ./application1
+    image: rajeshth05/application1:latest
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  application2:
+    build:
+      context: ./application2
+    depends_on:
+      - application1
+    image: rajeshth05/application2:latest
+    ports:
+      - "5001:5001"
+    networks:
+      - app-network
+      
+networks:
+  app-network:

@@ -1,0 +1,256 @@
+###################### START DEPLOYMENT ########################
+INITIALIZING VARIABLES
+APP1_IMG_NAME: rajeshth05/application1
+APP2_IMG_NAME: rajeshth05/application2
+Building Docker images...
+Pushing Docker images to Docker Hub...
+Login Succeeded
+The push refers to repository [docker.io/rajeshth05/application1]
+d9b24156151f: Preparing
+7a8720ce2a46: Preparing
+7eefe9863dbb: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+9853575bc4f9: Waiting
+0900caae955e: Waiting
+414698da489a: Waiting
+7eefe9863dbb: Layer already exists
+7a8720ce2a46: Layer already exists
+d24f9dbb0a3a: Layer already exists
+8657193c8651: Layer already exists
+0900caae955e: Layer already exists
+9853575bc4f9: Layer already exists
+d9b24156151f: Pushed
+414698da489a: Layer already exists
+latest: digest: sha256:aaba928f2046449afa009e5a4da6fe5882fb0671c92046d07877249bd7b1ba7e size: 1994
+The push refers to repository [docker.io/rajeshth05/application2]
+aa92056ed284: Preparing
+d86e5b5d1a5a: Preparing
+7eefe9863dbb: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+d24f9dbb0a3a: Layer already exists
+8657193c8651: Layer already exists
+7eefe9863dbb: Layer already exists
+d86e5b5d1a5a: Layer already exists
+414698da489a: Layer already exists
+0900caae955e: Layer already exists
+9853575bc4f9: Layer already exists
+aa92056ed284: Pushed
+latest: digest: sha256:e0a2c4b3c7d00e34422e72aebe07a77160e3568285d953ae72798eb9a8025a03 size: 1994
+Deploying to Kubernetes...
+Waiting for services to be ready...
+========Application1 Response =========
+Fetching HTTP response from app1...
+{"id":"1","message":"Hello world"}
+
+========Application2 Response =========
+Fetching HTTP response from app2...
+{"id":"1","message":"dlrow olleH"}
+###################### END ########################
+
+###################### START DEPLOYMENT ########################
+INITIALIZING VARIABLES
+APP1_IMG_NAME: rajeshth05/application1
+APP2_IMG_NAME: rajeshth05/application2
+Building Docker images...
+Pushing Docker images to Docker Hub...
+Login Succeeded
+The push refers to repository [docker.io/rajeshth05/application1]
+0382219944b3: Preparing
+7a8720ce2a46: Preparing
+7eefe9863dbb: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+8657193c8651: Layer already exists
+d24f9dbb0a3a: Layer already exists
+7eefe9863dbb: Layer already exists
+7a8720ce2a46: Layer already exists
+414698da489a: Layer already exists
+0900caae955e: Layer already exists
+9853575bc4f9: Layer already exists
+0382219944b3: Pushed
+latest: digest: sha256:7973cdd8b85c49d46894dea7bb046f9a9210fe61a694013d9c64d6558ed2586e size: 1994
+The push refers to repository [docker.io/rajeshth05/application2]
+9a0b1c6fa8bd: Preparing
+d86e5b5d1a5a: Preparing
+7eefe9863dbb: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+0900caae955e: Waiting
+414698da489a: Preparing
+9853575bc4f9: Preparing
+9853575bc4f9: Waiting
+414698da489a: Waiting
+d24f9dbb0a3a: Layer already exists
+7eefe9863dbb: Layer already exists
+8657193c8651: Layer already exists
+d86e5b5d1a5a: Layer already exists
+0900caae955e: Layer already exists
+414698da489a: Layer already exists
+9853575bc4f9: Layer already exists
+9a0b1c6fa8bd: Pushed
+latest: digest: sha256:24bc736240540c1f2fef40b70b1874e98e2f41e5ca7806675a8c3afe2d5948ad size: 1994
+Deploying to Kubernetes...
+Waiting for services to be ready...
+========Application1 Response =========
+Fetching HTTP response from app1...
+{"id":"1","message":"Hello world"}
+
+========Application2 Response =========
+Fetching HTTP response from app2...
+{"id":"1","message":"dlrow olleH"}
+
+WARNING! This will remove all images without at least one container associated to them.
+Are you sure you want to continue? [y/N] Deleted Images:
+deleted: sha256:a535dadc55e69d0e7757344d4e7599afe06d7cc83a7e3f08eb413082e33f0cb3
+untagged: rajeshth05/application1@sha256:5d4d09364c5e183108eee1dcb06fee16faeede5264c36e97b9c38130e21174ec
+deleted: sha256:8a06bfe5f19828b068c1c9c5fd208f5f26a04a3da928375b98c675b8bc1c4343
+untagged: ttamanna/application2@sha256:9a8a62ff227199aef4cc45128b383e76a85b7b339e664d103f055fafe55908ee
+deleted: sha256:a325e6ed75e9d810d50dd8e2be6dcb214e0aeec4a6e0c39574f2959683c30b99
+untagged: ttamanna/application2:latest
+deleted: sha256:f366b2c25c56d94fada65bbb8353295cfc33627b7e5a93e6b3498b6c7ee5d391
+untagged: rajeshth05/application2@sha256:d01587c6ae8e86d9f47fed4c3a42d935a17a71304eba45ed38f14d8e8b106467
+deleted: sha256:80ffbe3227178ff29683148dbe44e8838c70ac65b72c81550656c1cd90c291f1
+untagged: ttamanna/application1@sha256:4cd266bb69f0a5f7a6f99b703051f296b4ebb3ee8a716e9471635e273580dc37
+deleted: sha256:5fcc14a73df554a9cdc606f09d543d7d22cc8f049800c8f719bc17f14366dab3
+untagged: rajeshth05/application2@sha256:c0fd7566032b924c9606b257a3f0e520e2046bf7d578be0c5a013ca77f91e03f
+deleted: sha256:8682b2e87c8b71d71c658322ea8773753d3293691f3b6c2e04fda9f876afd8e7
+untagged: ttamanna/application1@sha256:35bd8254dd60d4cd6c27a9d64833b202d70cfac683d55e8f22db5fd1c9d77be5
+deleted: sha256:3ca7da4fce73892c7e520f56a15632c28131c6785a8b178ed7df3119467f7f37
+untagged: rajeshth05/application1@sha256:1afade69786b01e0fb400c9e3d375f706df85b3fe35190307e33589e72f6dd4e
+deleted: sha256:876e1c64ec8aa9d30ea611bd666ba629a05fa97866e0210e5f809d07d3ad82ef
+untagged: rajeshth05/application2@sha256:657bc44605ee8256976ff2728ad9221495509d0923bbb72b715ee7b71b285979
+deleted: sha256:ae0b6bda40593c4b975412490342cf33d79ac79227c186cd63dcd9f30a39dec6
+untagged: rajeshth05/application1@sha256:845020e15ed87b25e61a812d0e269b66cc9a5bf3609ac4871ea059bf1f3345ab
+deleted: sha256:61210f819c38cd5d3b66faaaf1aa2b6f0f87b19c2d7821977926acca36625f6e
+deleted: sha256:01462896558fc7ee94d93caa9745a1dcf01bf85921833620010f06519723ce2d
+untagged: rajeshth05/application2@sha256:d9a1de66115823bda2928dfb1e4c0f86d4913e3dc3d9c968a107ed367405c615
+deleted: sha256:16d3b8a02078a5cb62a20a87f62660fd74fd921ee4df1de8b0dbf016a7a0d84c
+untagged: rajeshth05/application2@sha256:c9ea5866672e0f3e801c0dfba3be2bf02ae6bc73abfbc0a8b673b4f267b7c2f4
+deleted: sha256:1286004a0fb18df0875910113d4738d06ba6e3e7ba3ad711c4f64ab7eb556770
+untagged: rajeshth05/application1@sha256:35edf98dcea360b9d7d5eda460e49cd92ec3cb383201a1125ea98c71045dd24a
+deleted: sha256:8045380f1db44a1b424ef2e9e8d5c7f0e9d48f01c3f562c305bfcda376037695
+untagged: rajeshth05/application1@sha256:7e958650391ac1f0c465311c0bdda513bd15b57c03e873c79f5994422789668f
+deleted: sha256:8ae348553d1667512afee695676e83051689125f10ab9c8600080de6d993ecf5
+untagged: rajeshth05/application2@sha256:3077bf0d61bbc25641723103636d2d2b67ed93de7dda4c327044116252af33cb
+deleted: sha256:e39c190c948130d466c0505ecbf020fff8e0d9b2250313672596b3f94f3a20e4
+untagged: ttamanna/application2@sha256:491cef550bf5103a9303b1b61c065e0ef0a62245cdf2b7d10a96c7513f1e48b2
+deleted: sha256:9a7ded0600e526d32dd74ce509898e6ee8f97ec4767a238fca52cafe2102f71f
+untagged: rajeshth05/application1@sha256:4829974c5cb774096796b5ef435e2b38d27a07481a46d439d698c15671b471ee
+deleted: sha256:553fcc46e4413d5792724f8bee960605151369fb4425ffa7c22bbd6e64b0e5f4
+untagged: rajeshth05/application2@sha256:625e3966c3735c5849e10ae6cfe775304173e04384508dbcfe84dda3657b50bf
+deleted: sha256:ecb1ec75712b9757ccb1838eab353b2b87c0ce2b8f53f71eaa07a37c8f44cfd1
+deleted: sha256:d6a49982f3011b961eb3abbc51b514c68de78acb808802311a8b76d7214f2119
+untagged: rajeshth05/application1@sha256:9b4058810ff87cff3be6d6c5e8c49b79ebbaa7b1acdde6e9bdc001e35f53df53
+deleted: sha256:9b30236274ccb68168690c9296a54622cd9240ea55bb7bb7d2b2ab3b53b17ca4
+untagged: rajeshth05/application2@sha256:8671090ea752c20b4a5d8177bf7fdaa41b50bca6268d5e5118444ff89867a90c
+deleted: sha256:3e2d846def2e80bd78b4f9eaf876c923b0bf0f249f16109534c593659b00b04a
+untagged: rajeshth05/application1@sha256:fec7a3a55a6439a489c38fa01ab96ecb6ceb33b40586893453b5ac6228b2055f
+deleted: sha256:775291b59ea9405463b286188c0b8252313370d802846583b8fd6d69d095479b
+untagged: ttamanna/application1@sha256:d8f15ff9e876381d0c657ddd8d7c6a0322ac3f0d2d5fb30c3eb6ef5475ba14cc
+deleted: sha256:98cd211d318b156b87ed43e74ae6b06a99bba6ca8175dd80f9dd165536347277
+untagged: rajeshth05/application1@sha256:aaba928f2046449afa009e5a4da6fe5882fb0671c92046d07877249bd7b1ba7e
+deleted: sha256:ea81501f51d72cb538e592976ff342228ef8b0cb1e663cbb22fa8a81b96b7e50
+untagged: rajeshth05/application2@sha256:e0a2c4b3c7d00e34422e72aebe07a77160e3568285d953ae72798eb9a8025a03
+deleted: sha256:fbaa80c273ee24e870b6836ec5d13ad7554da70b51674873351cf0d4b4664a8f
+untagged: rajeshth05/application1@sha256:2a6468d1fe746cc35392ab7ddd5d837eebfa9fc9313e899ecc0946a6663c8369
+deleted: sha256:b6050f3c635cf614c5b59a5685af8c8ea8e4471718d4579e64400c7888307ad7
+untagged: rajeshth05/application2@sha256:b96aee6dca1d0a497ab0fad51fcc0f8e95ce272b4d1828e90c075c47b9c4dced
+deleted: sha256:639f3c116e3c0e744642f58691e6ede543f363f583ada79a6880df47e98b485f
+untagged: rajeshth05/application1@sha256:fc0dc9156bf04fb95ef6efea7b98c240f4c5fe4883728fbc78f27f99bc47c5f7
+deleted: sha256:d985784b78a9077fece4bcc827a93ddb8f390d007ef660314fa752eb09ff4a1d
+untagged: ttamanna/application1:latest
+untagged: ttamanna/application1@sha256:edd5c92c7c17776aee3bfe073bc1ad2b8f022992b67783dc9141b4cb5272b65f
+deleted: sha256:5b0cd4f30f3febc5d3b1bd53a60144fb1be51e7b714161a2f3677fb877764c3b
+untagged: rajeshth05/application2@sha256:1b1a95da8845e3825e09b06c9901c51f9f8fc101912a14b2756d32d2712c5346
+deleted: sha256:bbdf0cc4e7d8ac1c56646b9450b2b96a1445b96d1d4c9c35e785fbeccf9640f8
+untagged: rajeshth05/application2@sha256:4a420ba382c4509765590b8f4945306a246fba60071a4cf0a11a5a3eefc50645
+deleted: sha256:626fa5fdb2d4bc1e16adb4f59f5379a1ee685d5cdeb1af65983abbb6b9026721
+deleted: sha256:cf80cbb90591cb09b83032f3daeefb7cca00a341324ffa5a69842d9c0b46a457
+untagged: ttamanna/application1@sha256:af8bc3a27885b10afb55ccbbcd94c27b2047e30ed4f7e0a405973689b0000679
+deleted: sha256:6ee4443d0fc7a6ce7b04c9e7873e6ab04f6a110f31c23ee1d4fdffe18fa98e9b
+untagged: rajeshth05/application1@sha256:0e34704163d4b6a4f878a7ccc3de6b9b7a86869ff372809a45b55a44ba31bd4d
+deleted: sha256:e743a8b07c22aaf071cbca712a7b7f0a2ce5e2a48506ef93ca192b54afcca9b1
+untagged: ttamanna/application2@sha256:db91f39ec13c6ec82c620cf2ab7ede3307029bcac4283ece044d2d47c162611d
+deleted: sha256:1c3cd14e1e001115abfd19cbe4400c06ad1d39c33027a67198d346df910688c2
+
+Total reclaimed space: 0B
+###################### END ########################
+
+###################### START DEPLOYMENT ########################
+INITIALIZING VARIABLES
+APP1_IMG_NAME: rajeshth05/application1
+APP2_IMG_NAME: rajeshth05/application2
+Building Docker images...
+Pushing Docker images to Docker Hub...
+Login Succeeded
+The push refers to repository [docker.io/rajeshth05/application1]
+7e7108779228: Preparing
+7a8720ce2a46: Preparing
+7eefe9863dbb: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+7a8720ce2a46: Layer already exists
+d24f9dbb0a3a: Layer already exists
+8657193c8651: Layer already exists
+7eefe9863dbb: Layer already exists
+0900caae955e: Layer already exists
+9853575bc4f9: Layer already exists
+414698da489a: Layer already exists
+7e7108779228: Pushed
+latest: digest: sha256:26cb82f4f2ddbc49d755d5ecbbea3736f2b888bed1eacbf852d336fbd49bfbc6 size: 1994
+The push refers to repository [docker.io/rajeshth05/application2]
+bef22941c6b9: Preparing
+d86e5b5d1a5a: Preparing
+7eefe9863dbb: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+7eefe9863dbb: Layer already exists
+8657193c8651: Layer already exists
+d86e5b5d1a5a: Layer already exists
+d24f9dbb0a3a: Layer already exists
+0900caae955e: Layer already exists
+414698da489a: Layer already exists
+9853575bc4f9: Layer already exists
+bef22941c6b9: Pushed
+latest: digest: sha256:67807532bd4abcf421ddb47499ebf5417cea76819a7d343d56e8383b36f593b3 size: 1994
+Deploying to Kubernetes...
+Waiting for services to be ready...
+========Application1 Response =========
+Fetching HTTP response from app1...
+{"id":"1","message":"Hello world"}
+
+========Application2 Response =========
+Fetching HTTP response from app2...
+{"id":"1","message":"dlrow olleH"}
+###################### END ########################
+

@@ -5,23 +5,26 @@ echo "###################### START DEPLOYMENT ########################"
 #################################
 #  SCRIPT INPUT ARGS			#
 #################################
+DEFAULT_NAMESPACE="default"
 
 DOCKER_USERNAME=$1 # Please provide your Docker Username as an script argument
 DOCKER_PASSWORD=$2 # Please provide your Docker Password as an script argument
-NAMESPACE=$3 # Provide NAMESPACE as per your choice that you wanted to deploy this aplication to.
+NAMESPACE="${3:-$DEFAULT_NAMESPACE}" # Provide NAMESPACE as per your choice that you wanted to deploy this aplication to.
 CLUSTER_IP=$4 # Privide the IP of a Cluster you want to deploy this solution to. If you keep this argument empty then it will take minikube IP dynamically.
 
 #################################
 #  INITIALIZATION STAGE			#
 #################################
 echo "INITIALIZING VARIABLES"
+
 if [ -z "$CLUSTER_IP" ]; then
   echo "CLUSTER_IP not provided. Fetching Minikube IP..."
   CLUSTER_IP=$(minikube ip)
 else
   echo "Using provided CLUSTER_IP: $CLUSTER_IP"
 fi
-MINIKUBE_IP=$(minikube ip)
+
+echo "NAMESPACE :  $NAMESPACE"
 HELM_RELEASE_NAME="my-apps"
 HELM_CHART_PATH="./webapp"
 APPLICATION1_IMAGE="application1"
@@ -34,11 +37,13 @@ APP2_IMG_NAME=$DOCKER_USERNAME/$APPLICATION2_IMAGE
 echo "APP1_IMG_NAME: $APP1_IMG_NAME"
 echo "APP2_IMG_NAME: $APP2_IMG_NAME"
 
-if kubectl get namespace $NAMESPACE >/dev/null 2>&1; then
-  echo "Namespace $NAMESPACE already exists. Skipping creation."
-else
-  echo "Creating namespace $NAMESPACE..."
-  kubectl create namespace $NAMESPACE
+if [ "$3" != "" ] && [ "$NAMESPACE" != "$DEFAULT_NAMESPACE" ]; then
+  if kubectl get namespace $NAMESPACE >/dev/null 2>&1; then
+    echo "Namespace $NAMESPACE already exists. Skipping creation."
+  else
+    echo "Creating namespace $NAMESPACE..."
+    kubectl create namespace $NAMESPACE
+  fi
 fi
 
 ## Using SED command to dynamically chaning the values in helm files. So that code runs everytime with the latest image.

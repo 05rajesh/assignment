@@ -4,9 +4,6 @@ import os
 
 app = Flask(__name__)
 
-minikube_ip = os.getenv('MINIKUBE_IP')
-app1_nodeport = os.getenv('APP1_NODEPORT')
-
 #app1_url = f"http://{minikube_ip}:{app1_nodeport}/application1/msg-response"
 app1_service_url = os.getenv('APP1_SERVICE_URL')
 

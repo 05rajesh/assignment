@@ -9,7 +9,7 @@ echo "###################### START DEPLOYMENT ########################"
 DOCKER_USERNAME=$1 # Please provide your Docker Username as an script argument
 DOCKER_PASSWORD=$2 # Please provide your Docker Password as an script argument
 NAMESPACE=$3 # Provide NAMESPACE as per your choice that you wanted to deploy this aplication to.
-CLUSTER_IP=$4
+CLUSTER_IP=$4 # Privide the IP of a Cluster you want to deploy this solution to. If you keep this argument empty then it will take minikube IP dynamically.
 
 #################################
 #  INITIALIZATION STAGE			#

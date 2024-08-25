@@ -1,0 +1,11 @@
+app1:
+  image: "rajeshth05/application1:latest"
+  targetPort: 5000
+  servicePort: 5000
+  containerPort: 5000
+
+app2:
+  image: "rajeshth05/application2:latest"
+  targetPort: 5001
+  servicePort: 5001
+  containerPort: 5001

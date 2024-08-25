@@ -1,0 +1,224 @@
+###################### START DEPLOYMENT ########################
+INITIALIZING VARIABLES
+CLUSTER_IP not provided. Fetching Minikube IP...
+APP1_IMG_NAME: rajeshth05/application1
+APP2_IMG_NAME: rajeshth05/application2
+Creating namespace webapp...
+namespace/webapp created
+Building Docker images...
+Pushing Docker images to Docker Hub...
+Login Succeeded
+The push refers to repository [docker.io/rajeshth05/application1]
+70212c95704d: Preparing
+df49c35656fd: Preparing
+d96665b761d7: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+df49c35656fd: Layer already exists
+8657193c8651: Layer already exists
+d24f9dbb0a3a: Layer already exists
+d96665b761d7: Layer already exists
+9853575bc4f9: Layer already exists
+0900caae955e: Layer already exists
+414698da489a: Layer already exists
+70212c95704d: Pushed
+latest: digest: sha256:cbea86d200d178f0a3d70ff5e03d05744a5392c484956b91b1594bb36e92968b size: 1994
+The push refers to repository [docker.io/rajeshth05/application2]
+a77602ab0609: Preparing
+c49042a47aa7: Preparing
+d96665b761d7: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+d24f9dbb0a3a: Layer already exists
+8657193c8651: Layer already exists
+d96665b761d7: Layer already exists
+c49042a47aa7: Layer already exists
+9853575bc4f9: Layer already exists
+414698da489a: Layer already exists
+0900caae955e: Layer already exists
+a77602ab0609: Pushed
+latest: digest: sha256:38b5b7e248a97ee987b76e617949e5b2163129c3c69c09bb1edd051a298ef6b9 size: 1994
+Deploying to Kubernetes...
+Release "my-apps" does not exist. Installing it now.
+NAME: my-apps
+LAST DEPLOYED: Sun Aug 25 05:31:11 2024
+NAMESPACE: webapp
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+Waiting for deployment app1-deployment to be available...
+deployment.apps/app1-deployment condition met
+Waiting for deployment app2-deployment to be available...
+deployment.apps/app2-deployment condition met
+APP1_NODEPORT: 31235
+APP2_NODEPORT: 32766
+========Application1 Response =========
+Fetching HTTP response from application1...
+{"id":"1","message":"Hello world"}
+
+Fetching HTTP response from application2...
+{"id":"1","message":"dlrow olleH"}
+
+###################### END ########################
+
+###################### START DEPLOYMENT ########################
+INITIALIZING VARIABLES
+CLUSTER_IP not provided. Fetching Minikube IP...
+APP1_IMG_NAME: rajeshth05/application1
+APP2_IMG_NAME: rajeshth05/application2
+Namespace webapp already exists. Skipping creation.
+Building Docker images...
+Pushing Docker images to Docker Hub...
+Login Succeeded
+The push refers to repository [docker.io/rajeshth05/application1]
+53ab773014f0: Preparing
+df49c35656fd: Preparing
+d96665b761d7: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+d24f9dbb0a3a: Layer already exists
+8657193c8651: Layer already exists
+d96665b761d7: Layer already exists
+df49c35656fd: Layer already exists
+0900caae955e: Layer already exists
+414698da489a: Layer already exists
+9853575bc4f9: Layer already exists
+53ab773014f0: Pushed
+latest: digest: sha256:b33110fa074f11202f25c2b9331add602194984ab8c124636ed8e32081fcf291 size: 1994
+The push refers to repository [docker.io/rajeshth05/application2]
+1a525696a552: Preparing
+c49042a47aa7: Preparing
+d96665b761d7: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+d24f9dbb0a3a: Layer already exists
+c49042a47aa7: Layer already exists
+d96665b761d7: Layer already exists
+8657193c8651: Layer already exists
+0900caae955e: Layer already exists
+9853575bc4f9: Layer already exists
+414698da489a: Layer already exists
+1a525696a552: Pushed
+latest: digest: sha256:3900342fd527301020d86ee57e0d84c869619e0bd39568fd2052639d19d8af15 size: 1994
+Deploying to Kubernetes...
+Release "my-apps" has been upgraded. Happy Helming!
+NAME: my-apps
+LAST DEPLOYED: Sun Aug 25 05:31:47 2024
+NAMESPACE: webapp
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+Waiting for deployment app1-deployment to be available...
+deployment.apps/app1-deployment condition met
+Waiting for deployment app2-deployment to be available...
+deployment.apps/app2-deployment condition met
+APP1_NODEPORT: 31235
+APP2_NODEPORT: 32766
+========Application1 Response =========
+Fetching HTTP response from application1...
+{"id":"1","message":"Hello world"}
+
+Fetching HTTP response from application2...
+{"id":"1","message":"dlrow olleH"}
+
+###################### END ########################
+
+###################### START DEPLOYMENT ########################
+INITIALIZING VARIABLES
+CLUSTER_IP not provided. Fetching Minikube IP...
+APP1_IMG_NAME: rajeshth05/application1
+APP2_IMG_NAME: rajeshth05/application2
+Creating namespace webapp1...
+namespace/webapp1 created
+Building Docker images...
+Pushing Docker images to Docker Hub...
+Login Succeeded
+The push refers to repository [docker.io/rajeshth05/application1]
+e5a5db8d186d: Preparing
+df49c35656fd: Preparing
+d96665b761d7: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+414698da489a: Waiting
+9853575bc4f9: Waiting
+df49c35656fd: Layer already exists
+d24f9dbb0a3a: Layer already exists
+d96665b761d7: Layer already exists
+8657193c8651: Layer already exists
+0900caae955e: Layer already exists
+414698da489a: Layer already exists
+9853575bc4f9: Layer already exists
+e5a5db8d186d: Pushed
+latest: digest: sha256:df049161d0b860bdf66f27b5f96cd58993ed360fe1caf129ca3849e3b9ed88e7 size: 1994
+The push refers to repository [docker.io/rajeshth05/application2]
+81a5b9b12aa8: Preparing
+c49042a47aa7: Preparing
+d96665b761d7: Preparing
+d24f9dbb0a3a: Preparing
+8657193c8651: Preparing
+0900caae955e: Preparing
+414698da489a: Preparing
+9853575bc4f9: Preparing
+0900caae955e: Waiting
+9853575bc4f9: Waiting
+414698da489a: Waiting
+d24f9dbb0a3a: Layer already exists
+d96665b761d7: Layer already exists
+c49042a47aa7: Layer already exists
+8657193c8651: Layer already exists
+0900caae955e: Layer already exists
+9853575bc4f9: Layer already exists
+414698da489a: Layer already exists
+81a5b9b12aa8: Pushed
+latest: digest: sha256:f49d3045058aa60cf7426c06af94dbaae28d46bc489ca7b8133565db06a34222 size: 1994
+Deploying to Kubernetes...
+Release "my-apps" does not exist. Installing it now.
+NAME: my-apps
+LAST DEPLOYED: Sun Aug 25 05:32:49 2024
+NAMESPACE: webapp1
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+Waiting for deployment app1-deployment to be available...
+deployment.apps/app1-deployment condition met
+Waiting for deployment app2-deployment to be available...
+deployment.apps/app2-deployment condition met
+APP1_NODEPORT: 32363
+APP2_NODEPORT: 31268
+========Application1 Response =========
+Fetching HTTP response from application1...
+{"id":"1","message":"Hello world"}
+
+Fetching HTTP response from application2...
+{"id":"1","message":"dlrow olleH"}
+
+###################### END ########################
+
